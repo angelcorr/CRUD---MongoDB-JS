@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 
 const User = require('../../../models/User');
+const likes = require('./likes');
 
 const router = express.Router({ mergeParams: true });
 
@@ -112,5 +113,7 @@ router.delete('/:postId', async (req, res) => {
     res.status(500).send(error);
   }
 });
+
+router.use('/:postId/likes', likes);
 
 module.exports = router;

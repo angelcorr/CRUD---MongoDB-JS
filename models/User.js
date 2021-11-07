@@ -29,6 +29,9 @@ const schema = new mongoose.Schema({
       required: [true, 'content is required'],
       maxlength: [240, 'content is too long, max is 240'],
     },
+    likes: {
+      type: Number,
+    },
     createdAt: { type: Date, default: Date.now },
   }],
   createdAt: { type: Date, default: Date.now },
